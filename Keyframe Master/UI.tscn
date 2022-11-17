@@ -1,0 +1,249 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+func _ready():
+	print(\"in _ready\");
+
+func _init():
+	print(\"in _inint\");
+
+func _enter_tree():
+	print(\"in _enter_tree\");
+
+
+func _on_Close_btn_pressed():
+	print('well isnt this interesting')
+"
+
+[node name="Control Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+
+[node name="Transparent Background" type="Button" parent="."]
+self_modulate = Color( 0, 0, 0, 0.34902 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Input container" type="ColorRect" parent="Transparent Background"]
+self_modulate = Color( 0.121569, 0.14902, 0.2, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -174.5
+margin_top = -175.0
+margin_right = 174.5
+margin_bottom = 175.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Transparent Background/Input container"]
+self_modulate = Color( 0.662745, 0.796078, 1, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 18.0
+margin_right = 1.0
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add Keys" type="Tabs" parent="Transparent Background/Input container/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+tab_align = 0
+
+[node name="Keyframe_prop_Label" type="Label" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 28.0
+margin_top = 32.0
+margin_right = -196.0
+margin_bottom = -250.0
+text = "Keyframe Property"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyframe_prop_LineEdit" type="LineEdit" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+self_modulate = Color( 0.521569, 0.882353, 0.992157, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 175.0
+margin_top = 28.0
+margin_right = -23.0
+margin_bottom = -244.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateMode_Label" type="Label" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 97.0
+margin_right = -227.0
+margin_bottom = -185.0
+text = "Update Mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateMode_Dropdown" type="OptionButton" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+margin_left = 175.854
+margin_top = 94.562
+margin_right = 317.854
+margin_bottom = 114.562
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InterpolationMode_Label" type="Label" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 132.0
+margin_right = -190.0
+margin_bottom = -150.0
+text = "Interpolation Mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InterpolationMode_Dropdown" type="OptionButton" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+margin_left = 175.854
+margin_top = 132.207
+margin_right = 317.854
+margin_bottom = 152.207
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoopWrapMode_Label" type="Label" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 171.0
+margin_right = -190.0
+margin_bottom = -111.0
+text = "Interpolation Mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoopWrapMode_Dropdown" type="OptionButton" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+margin_left = 175.854
+margin_top = 171.332
+margin_right = 317.854
+margin_bottom = 191.332
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add_btn" type="Button" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.5
+margin_top = 254.0
+margin_right = -218.5
+margin_bottom = -22.0
+text = "Add"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Remove_btn" type="Button" parent="Transparent Background/Input container/TabContainer/Add Keys"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 230.0
+margin_top = 254.0
+margin_right = -48.0
+margin_bottom = -22.0
+text = "Remove"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mod Keys" type="Tabs" parent="Transparent Background/Input container/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="Transparent Background/Input container/TabContainer/Mod Keys"]
+margin_left = 63.5
+margin_top = 80.0
+margin_right = 163.5
+margin_bottom = 94.0
+text = "Time Stamp"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveTime" type="SpinBox" parent="Transparent Background/Input container/TabContainer/Mod Keys"]
+margin_left = 188.5
+margin_top = 75.0
+margin_right = 287.5
+margin_bottom = 99.0
+step = 0.001
+allow_greater = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move" type="Button" parent="Transparent Background/Input container/TabContainer/Mod Keys"]
+margin_left = 60.5
+margin_top = 238.0
+margin_right = 143.5
+margin_bottom = 258.0
+text = "Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Duplicate" type="Button" parent="Transparent Background/Input container/TabContainer/Mod Keys"]
+margin_left = 206.5
+margin_top = 238.0
+margin_right = 294.5
+margin_bottom = 258.0
+text = "Duplicate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selected" type="CheckBox" parent="Transparent Background/Input container/TabContainer/Mod Keys"]
+margin_left = 90.5
+margin_top = 155.0
+margin_right = 252.5
+margin_bottom = 179.0
+text = "Only Selected Nodes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close_btn" type="Button" parent="Transparent Background/Input container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 314.5
+margin_top = 11.0
+margin_right = -14.5
+margin_bottom = -319.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
